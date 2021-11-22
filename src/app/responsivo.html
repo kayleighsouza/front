@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de responsividade</title>
+
+    <style>
+        body{
+            background-color: gray;
+        }
+        main{
+            background-color: white;
+            padding: 20px; /*preenchimento*/
+            border-radius: 10px; /*curvatura da borda*/
+
+            min-width: 280px; /*valor minimo do main vai ocupar, 320px é a largura das telas de antigos celulares, como tem 20 de padding (preenchimento), então vamos ter 320-40=280px*/
+            max-width: 800px; /*valor maximo que o main vai ocupar na tela */
+            margin: auto; /*centraliza o conteudo main*/
+        }
+        img{
+            width: 100%;/*imagem vai se adaptar aos tamanhos da tela*/
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Testando Responsividade</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto id nisi natus facilis iste, doloremque minima reiciendis modi cumque exercitationem? Dignissimos vitae repellat est, in laudantium magni nulla placeat officia?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident iusto accusamus quas placeat? Ut culpa molestiae illo, inventore debitis maxime cupiditate fuga facilis ea distinctio velit similique, eligendi quia quis!Lorem</p>
+        <picture><!--um "if else" de fotos-->
+            <source media="(max-width: 600px)" srcset="imagens/irina-blok-pq.jpg">
+            <!--Quando chegar nos 600 px, vai carregar a foto pequena (pq)-->
+            <img src="imagens/irina-blok.jpg" alt="Imagem da Irina">
+            <!--Passou dos 600px, vai carregar a foto normal da Irina-->
+        </picture>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet optio ullam vero cupiditate modi voluptas necessitatibus est deserunt dignissimos adipisci fuga debitis maxime quia nulla eos, quae non nostrum ut. Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam commodi laboriosam ratione doloremque natus sunt nesciunt suscipit! Deserunt veniam eius quisquam sit neque nulla cupiditate, obcaecati accusantium a, fuga ad. Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nihil totam ullam? Nisi, velit facere? Accusantium, aliquid eveniet architecto dicta veniam, corporis sit voluptatem incidunt maxime accusamus quos quam veritatis!</p>
+    </main>
+</body>
+</html>

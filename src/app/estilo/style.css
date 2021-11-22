@@ -1,0 +1,196 @@
+@charset "UTF-8";
+
+/*
+#c5ebd6
+#83e1ad
+#3ddc84
+#2fa866
+#1a5c37
+#063d1e
+*/
+
+/*import do google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+/*usando a fonte que baixamos*/
+@font-face{
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+
+:root{ /*raiz da arvore / local onde declaro variavel*/
+    --cor0:#c5ebd6;
+    --cor1:#83e1ad;
+    --cor2:#3ddc84;
+    --cor3:#2fa866;
+    --cor4:#1a5c37;
+    --cor5:#063d1e;
+
+    --fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+    --fonte-destaque:  'Bebas Neue', cursive;
+    --fonte-android: 'Android', cursive;
+
+}
+*{ /*configurações globais / todos os elementos (h1,p,nav,div e etc...)*/
+    margin: 0px; /*a margem*/
+    padding: 0px; /*o preenchimento dos elementos*/
+}
+body{
+    background-color:var(--cor0);
+    font-family: var(--fonte-padrao)
+}
+a.externo::after{ /*todos os links da classe externo, depois deles vão ter...*/
+    content: '\00A0\1F517'; /*depois dele vai ter \00A0 = um espaço, \1F517 = um emoji de link*/
+}
+header{ /*cabeçario*/
+    background-image: linear-gradient(to bottom, var(--cor3), var(--cor5));
+    /*degrade entre duas cores de cima para para baixo*/
+    min-height: 150px; /*a altura minima do cabeçario*/
+    text-align: center; /*todo texto vai ser alinhado*/
+    padding-top: 40px; /*margem superior / o preenchimento de cima*/
+
+}
+header > h1{
+    color:white;
+    font-family: var(--fonte-destaque);
+    font-size: 3em;
+    font-weight: normal;
+    margin-bottom: 20px; /*uma margem de baixo do H1*/
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.336);
+}
+header > p{
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    color: white;
+    max-width: 600px; /*tamanho maximo de largura que o "p" vai ter*/
+    padding-right: 10px; /* preenchimento lateral quando a tela tiver espremida */
+    padding-left: 10px;
+    margin:auto; /*como deu o tamanho maximo, virou um bloco, com isso temos que centralizar*/
+    margin-bottom: 20px ; /*uma margem na parte de baixo*/
+    text-shadow: 2px 2px 0px rgba(177, 155, 155, 0.336);
+}
+nav{ /*menus*/
+    background-color: var(--cor5);
+    padding: 10px; /*um preenchimento geral*/
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.404);
+}
+nav > a{ /*links dos menus*/
+    color: var(--cor1);
+    padding: 10px; /*espaço entre cada palavra*/
+    text-decoration: none; /*sem o sublinhado do link*/
+    border-radius: 5px; /*arredondamento*/
+    font-weight: bold; /*grossura da fonte*/
+    transition-duration: 0.5s; /*tempo de resposta*/
+}
+nav > a:hover{ /*quando passar o mouse em cima dos links*/
+    background-color: var(--cor3); /*vai mudar a cor de fundo*/
+    color: var(--cor5); /*e a cor das letras*/
+}
+main{
+    min-width: 300px; /*o main vai ter largura minima de 300px*/
+    max-width: 1000px;/*e vai ter largura maxima de 1000px*/
+    margin: auto; /*centralizar o conteudo do main*/
+    margin-bottom: 30px; /*deixar o main separado do roda pé*/
+    padding: 20px; /*o conteudo do main estava bem próximo da borda do main, usando preenchimendo deu para "afastar"*/
+    background-color: white; /*a cor de fundo do main*/
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.432); /*a sombra*/
+    border-bottom-left-radius: 10px; /*arredondar a bordar de baixo da esquerda*/
+    border-bottom-right-radius: 10px; /*arredondar a bordar de baixo da direita*/
+}
+div.video{ /*tudo que for div da classe video*/
+    background-color: var(--cor5);
+    margin: 0px -20px 30px -20px;
+    padding: 20px;
+    padding-bottom: 59%;
+    position: relative;
+}
+div.video > iframe{ /*agora a configuração para o iframe, o video que ta dentro*/
+    position: absolute;
+    top:5%;
+    left:5%;
+    width: 90%;
+    height: 90%;
+}
+main h1{
+    color: var(--cor5);
+    font-family: var(--fonte-android);
+    font-weight: normal;
+    font-size: 1.8em;
+}
+main h2{
+    font-family: var(--fonte-android);
+    color: var(--cor4);
+    font-weight: normal;
+    font-size: 1.3em;
+    background-image: linear-gradient(to right, var(--cor1), transparent);
+    /*degradê de uma cor até transparente, para direita*/
+    text-indent: 8px; /*um espaço antes de começar o texto*/
+}
+main p{ /*os paragrafos que estão dentro de main*/
+    margin: 15px 0px; /* as margins*/
+    text-align: justify; /*texto justificado*/
+    text-indent: 30px; /*recuo de inicio de paragrafo*/
+    font-size: 1.1em; /*tamanho da fonte*/
+    line-height: 2em; /*altura da linha, espaçamento entre uma linha e outra*/
+}
+main strong{ /*tudo que tiver no main e for strong*/
+    color: var(--cor4);
+    font-weight: bolder;
+}
+main a{ /*todos os links que estiverem no main*/
+    text-decoration: none; /*tirou o sublinhado*/
+    font-weight: bold; 
+    color: var(--cor5);
+    background-color: var(--cor1);
+    padding: 2px 6px;
+}
+main a:hover{ /*quando passar por cima do link do main*/
+    text-decoration: underline; /*fica sublinhado*/
+    color: var(--cor4); /*muda de cor*/
+}
+main img{
+    width: 100%; /*imagens do main irão se adaptar*/
+}
+main img.pequena{
+    max-width: 350px; /*essa imagem pequena vai "crescer" no máximo de 350px de largura*/
+    display: block; /*mas a imagem não é um bloco, por isso que vamos tornar ela um bloco com esse comando*/
+    margin: auto; /*para centralizar a imagem*/
+}
+aside{ /*conteúdo perifericos / extras / curiosidades / secundario*/
+    background-color: var(--cor1);
+    padding: 10px; /*preenchimento*/
+    border-radius: 10px; /*arredondamento das bordas*/
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.342); /*sombra*/
+}
+aside > h3{
+    background-color: var(--cor4);
+    color: white;
+    padding: 5px;
+    margin: -10px -10px 0px -10px; /*margem crescer para fora, por isso de colocar valores negativos*/
+    /*-10px de cima, -10px da direita, 0px para baixo, -10px da esquerda*/
+    border-radius: 10px 10px 0px 0px;
+    /*mas ainda quero o arredondamento, então 10px em cima da esquerda, 10px em cima da direita, 0px em baixo da esquerda, 0px em baixo da direita*/
+}
+aside > ul{ /*listas dentro do aside*/
+    list-style-type: '\2714\00A0\00A0'; /*muda o simbolo, troca a bola por outro que pegou na emojipedia*/
+    /*\2714 = é o emoji, \00A0\00A0 = é um espaço sem quebra*/
+    list-style-position: inside; /*coloca as bolinhas para dentro do aside*/
+    columns: 2; /*divide em duas colunas a lista*/
+
+}
+footer{ /*roda pé*/
+    background-color: var(--cor5);
+    color: white;
+    text-align: center; /*centralizar o texto*/
+    font-size: 0.8em;
+    padding: 5px; /*preenchimento do roda pé*/
+}
+footer a{ /*os sites do roda pé*/
+    color: white;
+    font-weight: bolder; 
+    text-decoration: none; /*tirando o sublinhado*/
+}
+footer a:hover{ /*quando passar o mouse por cima dos links do roda pé*/
+    text-decoration: underline; /*colocando sublinhado*/
+    color: var(--cor1);
+}
